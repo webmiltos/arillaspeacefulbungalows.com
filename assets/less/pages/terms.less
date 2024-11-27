@@ -1,0 +1,73 @@
+// main: ../style.less
+
+.terms-page {
+    .terms-section {
+        background: @main-color-light;
+
+        h2 {
+            margin: 40px 0 10px 0;
+            font-size: 23px;
+            color: @main-color;
+            text-transform: capitalize;
+
+            @media screen and (max-width:600px) {
+                margin: 25px 0 15px 0;
+                font-size: 20px;
+            }
+        }
+
+        h3 {
+            margin: 40px 0 10px 0;
+            font-size: 20px;
+            color: @main-color;
+            text-transform: capitalize;
+
+            @media screen and (max-width:600px) {
+                margin: 25px 0 15px 0;
+                font-size: 18px;
+            }
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 23px;
+            color: #676767;
+            font-weight: 400;
+
+            @media screen and (max-width:600px) {
+                font-size: 15px;
+                line-height: 18px;
+            }
+        }
+
+        h3,
+        h4,
+        h5,
+        li,
+        a {
+            color: @main-color;
+        }
+
+        a {
+            text-decoration: underline;
+        }
+
+        strong {
+            font-weight: 700;
+        }
+
+        .content-left-wrap {
+            max-width: 1150px !important;
+            margin: auto !important;
+        }
+
+        .content-bottom ul {
+            padding-left: 20px;
+            margin-bottom: 15px;
+
+            li {
+                list-style-type: disc;
+            }
+        }
+    }
+}
