@@ -129,14 +129,15 @@
 					@media screen and (max-width:800px) {
 						font-size: 50px;
 						line-height: 60px;
+						max-width: 320px;
 					}
 
-					@media screen and (max-width:600px) {
-						font-size: 37px;
-						line-height: 42px;
-						text-transform: none;
-						width: 320px;
-					}
+					// @media screen and (max-width:600px) {
+					// 	font-size: 37px;
+					// 	line-height: 42px;
+					// 	text-transform: none;
+					// 	width: 320px;
+					// }
 				}
 
 				.subtitle {
@@ -517,11 +518,31 @@
 			}
 
 			@media screen and (max-width:600px) {
-				padding: 150px 0 0 10px;
+				padding: 0;
+
+				.intro-title {
+					text-align: left !important;
+
+					&::before {
+						content: '';
+						position: absolute;
+						background-image: url('assets/images/logo-texts.png');
+						background-size: contain;
+						right: -20px !important;
+						top: -20px !important;
+						width: 120px !important;
+						height: 120px !important;
+						background-repeat: no-repeat;
+						-webkit-filter: brightness(200);
+						filter: brightness(200);
+					}
+				}
 			}
 		}
 
 		@media screen and (max-width:600px) {
+			min-height: unset;
+
 			.intro-wrap {
 				display: grid;
 			}
@@ -535,7 +556,7 @@
 			// }
 
 			.content-left {
-				padding: 20px 0 0 0 !important;
+				padding: 50px 0 0 0 !important;
 
 				.intro-title {
 					text-align: left;
@@ -563,8 +584,12 @@
 					max-width: 420px;
 
 					img {
-						aspect-ratio: 1 / 1.2;
-						max-width: 420px;
+						aspect-ratio: 1 / 1.25;
+						max-width: 400px;
+					}
+
+					.text {
+						margin-top: 10px;
 					}
 				}
 			}
@@ -579,7 +604,7 @@
 
 					img {
 						aspect-ratio: 1;
-						max-width: 420px;
+						max-width: 450px;
 					}
 				}
 			}
@@ -641,7 +666,6 @@
 				left: auto !important;
 				align-content: center !important;
 				justify-content: center !important;
-
 			}
 		}
 
@@ -729,14 +753,16 @@
 
 						select {
 							position: relative;
+							cursor: pointer;
+							color: #939391 !important;
 
 							option {
 								font-weight: 300 !important;
+								background: #fff;
 							}
 						}
 
 						&.dropdown {
-							cursor: pointer;
 							position: relative;
 
 							&::before {
@@ -837,6 +863,8 @@
 			}
 
 
+
+
 			@media screen and (max-width:1950px) {
 				width: 86%;
 				height: fit-content;
@@ -923,7 +951,7 @@
 					gap: 20px;
 					text-align: center;
 					padding: 30px 10px;
-					max-width: 400px;
+					max-width: 520px;
 
 					&::before {
 						content: '';
@@ -940,16 +968,26 @@
 					img {
 						border-radius: 50%;
 						aspect-ratio: 1;
-						max-width: 400px;
+						max-width: 380px;
 						margin: auto;
 					}
 
 					.title {
-						margin-top: 30px;
+						font-size: 26px;
+						font-weight: 600;
+						margin-top: 40px;
+						letter-spacing: 2px;
+					}
+
+					a {
+						font-size: 15px;
+						width: fit-content;
+						margin: auto;
 					}
 
 					.text {
-						max-width: 600px;
+						font-size: 18px;
+						letter-spacing: 2px;
 					}
 
 					@media screen and (max-width:1366px) {
@@ -999,15 +1037,13 @@
 				}
 
 				.content-right {
-					height: 300px;
+					height: 600px;
 					padding: unset;
 					margin-bottom: 0;
 				}
 			}
 		}
 	}
-
-
 
 	.discount-section {
 		position: relative;
@@ -1199,6 +1235,15 @@
 
 	.more-posts-section {
 
+		.container.center {
+			margin-bottom: 20px;
+
+			.text {
+				max-width: 670px;
+				margin: auto;
+			}
+		}
+
 		.full {
 			gap: 3.33%;
 			justify-content: space-between;
@@ -1222,10 +1267,6 @@
 					z-index: 9;
 				}
 
-				&:hover {
-					top: -5px;
-					transition: top .1s ease;
-				}
 
 				.image-wrap {
 					position: relative;
@@ -1236,6 +1277,7 @@
 						width: 100%;
 						height: 100%;
 						object-fit: cover;
+						transition: transform .3s ease-in-out;
 					}
 
 					.title {
@@ -1243,12 +1285,23 @@
 						bottom: 30px;
 						left: 0;
 						z-index: 99;
+						transition: all .3s ease-in-out;
 					}
 				}
 
 				&:nth-child(2) {
 					margin-top: -50px;
 					height: 100%;
+				}
+
+				&:hover {
+					img {
+						transform: scale(1.03);
+					}
+
+					.title {
+						color: @main-color;
+					}
 				}
 
 				@media screen and (max-width:1024px) {
@@ -1264,9 +1317,23 @@
 					}
 				}
 			}
+
+			@media screen and (max-width:600px) {
+				display: grid;
+				grid-template-columns: 1fr 1fr 1fr;
+				overflow: scroll;
+				padding-bottom: 20px;
+
+				.post-item {
+					width: 300px;
+				}
+			}
+		}
+
+		@media screen and (max-width:1024px) {
+			padding-top: 80px;
 		}
 	}
-
 
 	.facilities-section {
 		position: relative;
@@ -1315,12 +1382,19 @@
 
 					.texts-wrap {
 						display: flex;
-						align-items: baseline;
+						align-items: center;
 						gap: 20px;
+						padding-right: 20px;
 
 						.text {
 							font-size: 20px;
 							margin-bottom: 0;
+							text-transform: uppercase;
+							margin-top: 4px;
+
+							@media screen and (max-width:600px) {
+								font-size: 18px;
+							}
 						}
 
 						.tooltip {
@@ -1343,7 +1417,7 @@
 								position: absolute;
 								width: max-content;
 								background: #fff;
-								top: -52px;
+								top: -58px;
 								left: -26px;
 								color: #D3AA6E;
 								font-size: 15px;
@@ -1373,9 +1447,6 @@
 							}
 						}
 					}
-
-
-
 
 					img {
 						max-width: 50px;
@@ -1444,7 +1515,6 @@
 						aspect-ratio: 1;
 						max-height: 600px;
 						max-width: 600px;
-
 					}
 
 					&::before {
@@ -1477,9 +1547,39 @@
 		@media screen and (max-width:600px) {
 			padding: 10px;
 
-			.content-right {
-				padding: 30px 20px;
+			.container {
+				flex-direction: column-reverse;
+				padding: 3%;
+
+				.content-right {
+					padding: 30px 0;
+					margin-bottom: 0;
+
+					.footer-image-wrap {
+						&::before {
+							content: '';
+							position: absolute;
+							background-image: url('assets/images/logo-texts.png');
+							background-size: contain;
+							left: -30px;
+							top: -30px;
+							width: 140px;
+							height: 140px;
+							background-repeat: no-repeat;
+						}
+					}
+				}
+
+				.content-left {
+					padding: 3% 0;
+				}
 			}
 		}
 	}
 }
+
+// .single-field.date-field {
+// 	.numInput.cur-year {
+// 		color: red !important;
+// 	}
+// }

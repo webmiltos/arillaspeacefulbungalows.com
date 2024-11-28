@@ -130,24 +130,24 @@
                         position: relative;
                     }
 
-                    .swiper-slide {
-                        height: 430px;
+                    .hero-slider-row .swiper-slide {
+                        height: 430px !important;
                     }
 
-                    .swiper-slide.swiper-slide-active {
+                    .hero-slider-row .swiper-slide.swiper-slide-active {
                         width: 15% !important;
                         height: 430px;
                         transition: all .5s ease-in-out;
                     }
 
-                    .swiper-slide.swiper-slide-next {
+                    .hero-slider-row .swiper-slide.swiper-slide-next {
                         width: 70% !important;
                         height: 430px;
                         transition: all .5s ease-in-out;
                     }
 
-                    .swiper-button-next,
-                    .swiper-button-prev {
+                    .hero-slider-row .swiper-button-next,
+                    .hero-slider-row .swiper-button-prev {
                         position: absolute;
                         top: var(--swiper-navigation-top-offset, 80%);
                         width: calc(var(--swiper-navigation-size)/ 44 * 27);
@@ -163,8 +163,8 @@
                     }
 
 
-                    .swiper-button-next,
-                    .swiper-button-prev {
+                    .hero-slider-row .swiper-button-next,
+                    .hero-slider-row .swiper-button-prev {
                         border: 1px solid;
                         border-radius: 50%;
                         width: 90px;
@@ -172,45 +172,45 @@
                         color: #FFF !important;
                     }
 
-                    .swiper-button-next::after,
-                    .swiper-rtl .swiper-button-prev::after {
+                    .hero-slider-row .swiper-button-next::after,
+                    .hero-slider-row .swiper-rtl .swiper-button-prev::after {
                         content: none !important;
                     }
 
-                    .swiper-button-prev::after,
-                    .swiper-rtl .swiper-button-next::after {
+                    .hero-slider-row .swiper-button-prev::after,
+                    .hero-slider-row .swiper-rtl .swiper-button-next::after {
                         content: none !important;
                     }
                 }
 
                 @media screen and (max-width:600px) {
-                    .swiper-slide {
+                    .hero-slider-row .swiper-slide {
                         width: 100%;
                     }
 
-                    .swiper-button-prev::after,
-                    .swiper-rtl .swiper-button-next::after {
+                    .hero-slider-row .swiper-button-prev::after,
+                    .hero-slider-row .swiper-rtl .swiper-button-next::after {
                         left: 18px !important;
                     }
 
-                    .swiper-button-prev,
-                    .swiper-rtl .swiper-button-next {
+                    .hero-slider-row .swiper-button-prev,
+                    .hero-slider-row .swiper-rtl .swiper-button-next {
                         left: var(--swiper-navigation-sides-offset, 4px);
                         right: auto;
                     }
 
-                    .swiper-button-next,
-                    .swiper-button-prev {
+                    .hero-slider-row .swiper-button-next,
+                    .hero-slider-row .swiper-button-prev {
                         padding: 21px !important;
                     }
 
-                    .swiper-button-next::after,
-                    .swiper-rtl .swiper-button-prev::after {
+                    .hero-slider-row .swiper-button-next::after,
+                    .hero-slider-row .swiper-rtl .swiper-button-prev::after {
                         right: 18px;
                     }
 
-                    .swiper-button-next,
-                    .swiper-rtl .swiper-button-prev {
+                    .hero-slider-row .swiper-button-next,
+                    .hero-slider-row .swiper-rtl .swiper-button-prev {
                         right: var(--swiper-navigation-sides-offset, 2px);
                         left: auto;
                     }
@@ -311,8 +311,17 @@
                         <div class="single-item show-on-scroll slide-right" style="transition-delay: 0.1s;">
                             <div class="texts-wrap">
                                 <p class="text small show-on-scroll slide-down" style="transition-delay: 0.15s;"><?php the_sub_field('text'); ?></p>
+
+                                <?php if (get_sub_field('tooltip')) : ?>
+                                    <span class="tooltip">
+                                        <span class="tooltip-text">i</span>
+                                        <span class="text">
+                                            <?php the_sub_field('tooltip'); ?>
+                                        </span>
+                                    </span>
+                                <?php endif; ?>
                             </div>
-                            <?php $image = get_sub_field('image');
+                            <?php $image = get_sub_field('icon');
                             if (!empty($image)) : ?>
                                 <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
                             <?php endif; ?>
@@ -340,8 +349,7 @@
             <?php $images = get_field('gallery'); ?>
             <?php if (!empty($images)) : ?>
                 <!-- Display the first image as full-width -->
-                <div class="gallery-hero" style="background-image: url('<?php echo esc_url($images[0]['url']); ?>');">
-
+                <div class="gallery-hero" style="background-image: url('<?php echo esc_url($images[0]['url']); ?>'); background-size: cover; background-position: center;">
                     <!-- Button to trigger the Fancybox gallery -->
                     <div class="gallery-wrapper">
                         <div class="title large white center margin-bottom">Gallery</div>
@@ -366,7 +374,7 @@
     <section class="more-posts-section bg-color paddings">
         <div class="container center">
             <h3 class="title large main-color"><?php _e('More Bungalows'); ?></h3>
-            <p class="text main-color">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum.</p>
+            <p class="text main-color"><?php the_field('more_bungalows_section_text', 'options'); ?></p>
         </div>
         <div class="container full flex">
             <?php $i = 1; ?>

@@ -377,9 +377,10 @@ function wpdocs_menu_item_custom_output($item_output, $item, $depth, $args)
                                 <?php endif; ?>
                                 <div class="photo-wrap">
                                     <?php
-                                    $featured_image = the_post_thumbnail('medium_large');
-                                    ?>
-                                    <?php echo $featured_image; ?>
+                                    $image = get_field('about_image');
+                                    if (!empty($image)): ?>
+                                        <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                                    <?php endif; ?>
                                 </div>
                             </div>
 

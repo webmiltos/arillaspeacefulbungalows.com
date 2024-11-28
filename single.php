@@ -177,7 +177,7 @@
                 <?php
                 if (get_field('faqs_repeater')) : ?>
                     <?php while (the_repeater_field('faqs_repeater')) : ?>
-                        <div class="single-faq show-on-scroll slide-down data-role=" collapsiblese">
+                        <div class="single-faq show-on-scroll slide-down" data-role="collapsiblese">
                             <span class="circle"></span>
                             <div data-role="main" class="ui-content">
                                 <div data-role="collapsible" class="collapse-data">

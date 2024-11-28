@@ -9,7 +9,7 @@
     if (!empty($image)) : ?>
         <section class="intro-section" style="background-image: url(<?php echo $image['url']; ?>); background-size: cover;  background-repeat: no-repeat; filter: brightness(.9); background-position: 35% 75%;">
             <div class="container show-on-scroll slide-left">
-                <h1 class="title white extra-large bold"><?php the_field('intro_title'); ?></h1>
+                <h1 class="title white extra-large"><?php the_field('intro_title'); ?></h1>
                 <p class="content white"><?php the_field('intro_text'); ?></p>
             </div>
         </section>
@@ -61,7 +61,7 @@
                     <img src="<?php echo esc_url($image['sizes']['large']); ?>" loading="lazy" alt="<?php echo esc_attr($image['alt']); ?>" />
                 <?php endif; ?>
 
-                <h2 class="title uppercase bold main-color margin-bottom"><?php the_field('more_info_title'); ?></h2>
+                <h3 class="title uppercase semi-bold main-color margin-bottom"><?php the_field('more_info_title'); ?></h3>
                 <p class="text medium main-color"><?php the_field('more_info_text'); ?></p>
             </div>
             <div class="content-bottom show-on-scroll slide-right" style="transition-delay: 0.3s;">
@@ -77,7 +77,7 @@
                         <?php endwhile; ?>
                     <?php endif; ?>
                 </div>
-                <a class="button-circle white-hover  center" href="https://arillaspeacefulbungalows.gocreations.info/contact-us/" target="_blank">Contact Us</a>
+                <a class="button-circle hover-green center" href="<?php the_field('contact_link', 'options'); ?>">Contact Us</a>
             </div>
         </div>
     </section>

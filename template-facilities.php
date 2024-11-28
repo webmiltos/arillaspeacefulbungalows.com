@@ -9,7 +9,7 @@
     if (!empty($image)) : ?>
         <section class="intro-section" style="background-image: url(<?php echo $image['url']; ?>); background-size: cover;  background-repeat: no-repeat; background-position: center center;">
             <div class="container show-on-scroll slide-left">
-                <h1 class="title white extra-large bold"><?php the_field('intro_title'); ?></h1>
+                <h1 class="title white extra-large margin-bottom-small"><?php the_field('intro_title'); ?></h1>
                 <p class="content white"><?php the_field('intro_text'); ?></p>
             </div>
         </section>
@@ -22,7 +22,17 @@
                 <?php while (the_repeater_field('amenities_repeater')) : ?>
                     <div class="single-item show-on-scroll slide-right" style="transition-delay: 0.3s;">
                         <div class="texts-wrap">
-                            <p class="text medium uppercase show-on-scroll slide-down" style="transition-delay: 0.4s;"><?php the_sub_field('title'); ?></p>
+                            <p class="text medium uppercase show-on-scroll slide-down" style="transition-delay: 0.4s;">
+                                <?php the_sub_field('text'); ?>
+                            </p>
+                            <?php if (get_sub_field('tooltip')) : ?>
+                                <span class="tooltip">
+                                    <span class="tooltip-text">i</span>
+                                    <span class="text">
+                                        <?php the_sub_field('tooltip'); ?>
+                                    </span>
+                                </span>
+                            <?php endif; ?>
                         </div>
                         <?php $image = get_sub_field('image');
                         if (!empty($image)) : ?>
@@ -81,10 +91,9 @@
                 if ($image) : ?>
                     <?php echo wp_get_attachment_image($image['id'], $size); ?>
                 <?php endif; ?>
-                <p class="title medium uppercase main-color"><?php the_field('hall_title'); ?></p>
+                <h3 class="title medium uppercase main-color"><?php the_field('hall_title'); ?></h3>
                 <p class="text medium main-color"><?php the_field('hall_text'); ?></p>
                 <a class="text-button text uppercase main-color" href="<?php the_field('hall_link', 'options'); ?>">Learn More</a>
-
             </div>
         </div>
         <div class="content-right">
@@ -98,7 +107,7 @@
 
     <section class="area-section container">
         <div class="content-top show-on-scroll slide-left" style=" transition-delay: 0.1s;">
-            <h2 class="title extra-large white"><?php the_field('area_title'); ?></h2>
+            <h3 class="title extra-large white"><?php the_field('area_title'); ?></h3>
             <p class="text margin-bottom white"><?php the_field('area_text'); ?></p>
         </div>
 

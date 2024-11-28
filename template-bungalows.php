@@ -6,7 +6,7 @@
 
     <section class="intro-section">
         <div class="container center">
-            <h1 class="title large main-color show-on-scroll slide-up" style="transition-delay: 0.1s;"><?php the_field('intro_title'); ?></h1>
+            <h1 class="title large main-color margin-bottom-small show-on-scroll slide-up" style="transition-delay: 0.1s;"><?php the_field('intro_title'); ?></h1>
             <h2 class="no-font title large bold uppercase show-on-scroll slide-up"><?php the_field('intro_title'); ?></h2>
             <p class="text subtext main-color margin-bottom show-on-scroll slide-up"><?php the_field('intro_text'); ?></p>
         </div>
@@ -34,14 +34,20 @@
                         <div class="image-wrap">
                             <?php $image = get_field('about_image');
                             if (!empty($image)) : ?>
-                                <img src="<?php echo esc_url($image['sizes']['very_large']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                                <a href="<?php the_permalink(''); ?>">
+                                    <img src="<?php echo esc_url($image['sizes']['very_large']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                                </a>
                             <?php endif; ?>
                         </div>
                     </div>
                     <div class="content-right">
                         <div class="content-right-wrap">
-                            <h3 class="title large main-color center"><?php the_title(''); ?></h3>
-                            <div class="text main-color center show-on-scroll slide-up"><?php the_field('about_text', false, false); ?></div>
+                            <a href="<?php the_permalink(''); ?>">
+                                <h3 class="title large main-color center">
+                                    <?php the_title(''); ?>
+                                </h3>
+                            </a>
+                            <div class="text main-color center show-on-scroll slide-up"><?php the_field('intro_text', false, false); ?></div>
 
                             <?php if (get_field('hard_facts_repeater')) : ?>
                                 <div class="features">

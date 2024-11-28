@@ -118,46 +118,45 @@ function isElementPartiallyInViewport(el) {
 
 
 // on click copy Link
+// function copyTextToClipboard(text) {
+// 	var textArea = document.createElement("textarea");
+// 	textArea.style.position = 'fixed';
+// 	textArea.style.top = 0;
+// 	textArea.style.left = 0;
 
-function copyTextToClipboard(text) {
-	var textArea = document.createElement("textarea");
-	textArea.style.position = 'fixed';
-	textArea.style.top = 0;
-	textArea.style.left = 0;
+// 	textArea.style.width = '2em';
+// 	textArea.style.height = '2em';
 
-	textArea.style.width = '2em';
-	textArea.style.height = '2em';
+// 	textArea.style.padding = 0;
 
-	textArea.style.padding = 0;
+// 	textArea.style.border = 'none';
+// 	textArea.style.outline = 'none';
+// 	textArea.style.boxShadow = 'none';
 
-	textArea.style.border = 'none';
-	textArea.style.outline = 'none';
-	textArea.style.boxShadow = 'none';
-
-	textArea.style.background = 'transparent';
+// 	textArea.style.background = 'transparent';
 
 
-	textArea.value = text;
+// 	textArea.value = text;
 
-	document.body.appendChild(textArea);
+// 	document.body.appendChild(textArea);
 
-	textArea.select();
+// 	textArea.select();
 
-	try {
-		var successful = document.execCommand('copy');
-		var msg = successful ? 'successful' : 'unsuccessful';
-		console.log('Copying text command was ' + msg);
-	} catch (err) {
-		console.log('Oops, unable to copy');
-	}
+// 	try {
+// 		var successful = document.execCommand('copy');
+// 		var msg = successful ? 'successful' : 'unsuccessful';
+// 		console.log('Copying text command was ' + msg);
+// 	} catch (err) {
+// 		console.log('Oops, unable to copy');
+// 	}
 
-	document.body.removeChild(textArea);
-}
+// 	document.body.removeChild(textArea);
+// }
 
-function copyLink() {
-	copyTextToClipboard(location.href);
-	jQuery('#copied-text').fadeIn().delay(2000).fadeOut();
-}
+// function copyLink() {
+// 	copyTextToClipboard(location.href);
+// 	jQuery('#copied-text').fadeIn().delay(2000).fadeOut();
+// }
 
 
 
@@ -226,8 +225,6 @@ jQuery(document).ready(function () {
 
 
 
-
-
 // Burger Toggle
 jQuery('.site-header__right_burger').on('click', function (event) {
 	if (!event.target.closest('.burger-area')) {
@@ -257,11 +254,6 @@ document.addEventListener('mouseover', function (event) {
 
 
 
-var acc = document.getElementsByClassName("question-faq");
-var i;
-
-
-
 
 // Info Pages Mobile Menu
 jQuery(".mobile-info-tab").click(function () {
@@ -288,92 +280,6 @@ jQuery(".question").click(function () {
 	// Remove 'active' class from other items
 	allFaqItems.not(faqItem).find('.faq-content.active').removeClass('active');
 	allFaqItems.not(faqItem).find('.answer.active').removeClass('active');
-});
-
-
-
-// DATEPICKERS
-var checkInDatepicker = jQuery("#your-check-in").flatpickr({
-	dateFormat: "d M Y",
-	"locale": {
-		"firstDayOfWeek": 1 // start week on Monday
-	},
-	minDate: "today",
-	disableMobile: true,
-	onChange: function (dateStr, dateObj) {
-		// create date object from the date string
-		var date = new Date(dateStr);
-
-		// add how many days we want on the date
-		checkOutDatepicker.set("minDate", date.fp_incr(1));
-	}
-});
-var checkOutDatepicker = jQuery("#your-check-out").flatpickr({
-	dateFormat: "d M Y",
-	"locale": {
-		"firstDayOfWeek": 1 // start week on Monday
-	},
-	disableMobile: true,
-	minDate: "today",
-});
-jQuery('#your-time').flatpickr({
-	enableTime: true,
-	noCalendar: true,
-	time_24hr: true,
-	dateFormat: "H:i",
-	minTime: "10:00",
-	maxTime: "23:00",
-	disableMobile: true
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-	// Date picker elements
-	const checkInInput = document.getElementById('your-check-in');
-	const checkOutInput = document.getElementById('your-check-out');
-
-	// Initialize Flatpickr with the correct date format and minDate option
-	if (window.flatpickr) {
-		flatpickr(checkInInput, {
-			dateFormat: "d M Y",
-			minDate: "today", // Disable all dates before today
-			onChange: function (selectedDates) {
-				const selectedDate = selectedDates[0];
-				const day = String(selectedDate.getDate()).padStart(2, '0');
-				const month = String(selectedDate.getMonth() + 1).padStart(2, '0');
-				const year = selectedDate.getFullYear();
-				checkInInput.value = `${year}-${month}-${day}`;
-			}
-		});
-
-		flatpickr(checkOutInput, {
-			dateFormat: "d M Y",
-			minDate: "today", // Disable all dates before today
-			onChange: function (selectedDates) {
-				const selectedDate = selectedDates[0];
-				const day = String(selectedDate.getDate()).padStart(2, '0');
-				const month = String(selectedDate.getMonth() + 1).padStart(2, '0');
-				const year = selectedDate.getFullYear();
-				checkOutInput.value = `${year}-${month}-${day}`;
-			}
-		});
-	}
-
-	// Form submit event
-	document.getElementById('submit').addEventListener('click', function (e) {
-		if (!checkInInput.value || !checkOutInput.value) {
-			e.preventDefault(); // Prevent form submission if dates are not selected
-			alert('Please select both check-in and check-out dates.');
-		}
-	});
-});
-
-document.getElementById('submit').addEventListener('click', function (e) {
-	const adultsValue = document.getElementById('adults').value;
-	console.log("Selected Adults: ", adultsValue); // Debug: Check the selected value
-	if (!adultsValue) {
-		e.preventDefault(); // Prevent form submission if no adults selected
-		alert('Please select the number of adults.');
-	}
 });
 
 
@@ -415,6 +321,90 @@ jQuery(document).ready(function ($) { //no conflict
 
 
 
+// DATEPICKERS
+var checkInDatepicker = jQuery("#your-check-in").flatpickr({
+	dateFormat: "d M Y",
+	"locale": {
+		"firstDayOfWeek": 1 // start week on Monday
+	},
+	minDate: "today",
+	disableMobile: true,
+	onChange: function (selectedDates) {
+		const selectedDate = selectedDates[0];
+		const nextDay = new Date(selectedDate.getTime());
+		nextDay.setDate(selectedDate.getDate() + 1); // Add 1 day
+		checkOutDatepicker.set("minDate", nextDay);
+	}
+});
+var checkOutDatepicker = jQuery("#your-check-out").flatpickr({
+	dateFormat: "d M Y",
+	"locale": {
+		"firstDayOfWeek": 1 // start week on Monday
+	},
+	disableMobile: true,
+	minDate: "today",
+});
+jQuery('#your-time').flatpickr({
+	enableTime: true,
+	noCalendar: true,
+	time_24hr: true,
+	dateFormat: "H:i",
+	minTime: "10:00",
+	maxTime: "23:00",
+	disableMobile: true
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+	// Date picker elements
+	const checkInInput = document.getElementById('your-check-in');
+	const checkOutInput = document.getElementById('your-check-out');
+
+	// Initialize Flatpickr with the correct date format and minDate option
+	if (window.flatpickr) {
+		flatpickr(checkInInput, {
+			dateFormat: "Y-m-d", // Submitted format
+			altInput: true,
+			altFormat: "d M Y", // Displayed format
+			minDate: "today",
+			onChange: function (selectedDates) {
+				// Optional: Additional logic for date handling
+			}
+		});
+
+		flatpickr(checkOutInput, {
+			dateFormat: "d M Y",
+			minDate: "today", // Disable all dates before today
+			onChange: function (selectedDates) {
+				const selectedDate = selectedDates[0];
+				const day = String(selectedDate.getDate()).padStart(2, '0');
+				const month = String(selectedDate.getMonth() + 1).padStart(2, '0');
+				const year = selectedDate.getFullYear();
+				checkOutInput.value = `${year}-${month}-${day}`;
+			}
+		});
+	}
+
+	// Form submit event
+	document.getElementById('submit').addEventListener('click', function (e) {
+		if (!checkInInput.value || !checkOutInput.value) {
+			e.preventDefault(); // Prevent form submission if dates are not selected
+			alert('Please select both check-in and check-out dates.');
+		}
+	});
+});
+
+
+
+// document.getElementById('submit').addEventListener('click', function (e) {
+// 	const adultsValue = document.getElementById('adults').value;
+// 	console.log("Selected Adults: ", adultsValue); // Debug: Check the selected value
+// 	if (!adultsValue) {
+// 		e.preventDefault(); // Prevent form submission if no adults selected
+// 		alert('Please select the number of adults.');
+// 	}
+// });
+
+
 // add class on footer menu (mobile)
 jQuery(".footer-menu-wrap").click(
 	function () {
@@ -438,9 +428,6 @@ jQuery(".footer-menu-wrap").click(function () {
 });
 
 
-
-
-
 jQuery('.gallery-tab-link').on('click', function () {
 	jQuery('.gallery-tab-link').removeClass('active');
 	jQuery(this).addClass('active');
@@ -449,3 +436,6 @@ jQuery('.gallery-tab-link').on('click', function () {
 	var targetTab = jQuery('.gallery-wrap-page[data-id="' + jQuery(this).data('id') + '"]'); // find the target tab of that button
 	targetTab.addClass('active');  //show target tab
 });
+
+
+

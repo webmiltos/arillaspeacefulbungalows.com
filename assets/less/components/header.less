@@ -3,13 +3,16 @@
     .custom-header {
         top: 32px;
 
-
         .megamenu-dropdown-wrapper {
             top: ~'calc(110px + 32px)' !important;
         }
+
+        &.scrolled .custom-header-right-wrap .header-right-bottom-wrap .header-menu-wrap .menu-main-menu-container ul li .megamenu-dropdown-wrapper {
+            top: 130px !important;
+        }
     }
 
-    .document-wrapper {
+    .custom-header .document-wrapper {
         height: ~'calc(100vh - 70px)';
         top: 70px;
 
@@ -36,12 +39,6 @@
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
 }
-
-
-
-
-
-
 
 
 .header-socials-wrapper {
@@ -371,8 +368,8 @@
                                 // padding-right: 17px;
                                 &::after {
                                     content: '';
-                                    right: -22px;
-                                    width: 19px;
+                                    right: -24px;
+                                    width: 20px;
                                     height: 19px;
                                     // border-bottom: 1px solid @main-color;
                                     // border-right: 1px solid @main-color;
@@ -574,7 +571,7 @@
                                         height: 100%;
                                         max-height: unset;
                                         justify-content: inherit;
-                                        gap: 20px;
+                                        gap: 25px;
 
                                         .product-item {
                                             width: max-content;
@@ -587,13 +584,14 @@
                                                 &::before {
                                                     content: '';
                                                     position: absolute;
-                                                    width: 0;
+                                                    width: 100%;
                                                     height: 1px;
                                                     left: 0;
-                                                    bottom: 18px;
+                                                    bottom: 16px;
                                                     background: #CD9B4A;
                                                     z-index: 9;
-                                                    transition: width .3s ease;
+                                                    transition: transform .3s ease-in-out;
+                                                    transform: scaleX(0);
                                                 }
                                             }
 
@@ -616,7 +614,7 @@
 
                                                 .header-link {
                                                     &::before {
-                                                        width: 100%;
+                                                        transform: scaleX(1);
                                                     }
                                                 }
 
@@ -624,7 +622,6 @@
                                                     display: block;
                                                     z-index: 999;
                                                 }
-
                                             }
                                         }
 
@@ -636,6 +633,20 @@
                                             top: 0;
                                             margin: auto;
 
+                                            @keyframes zoom {
+
+                                                0%,
+                                                100% {
+                                                    transform: scale(1);
+                                                    /* Original size */
+                                                }
+
+                                                50% {
+                                                    transform: scale(1.03);
+                                                    /* Zoom in */
+                                                }
+                                            }
+
                                             img {
                                                 position: relative;
                                                 opacity: 0;
@@ -644,6 +655,8 @@
                                                 object-fit: contain;
                                                 margin: auto;
                                                 background-color: @main-color-light;
+                                                border-radius: 50%;
+                                                animation: zoom 2s infinite ease-in-out;
                                             }
 
                                             &::before {
@@ -668,12 +681,12 @@
                                             height: 360px;
                                             border-radius: 50%;
                                             object-fit: cover;
+
                                         }
 
                                         .product-item.active .photo-wrap::before {
                                             content: none !important;
                                         }
-
                                     }
                                 }
 
@@ -768,7 +781,6 @@
                                                 display: block;
                                                 z-index: 999;
                                             }
-
                                         }
                                     }
                                 }
@@ -815,25 +827,24 @@
                         }
                     }
 
-
-
                     a {
                         position: relative;
 
                         &::before {
                             content: '';
                             position: absolute;
-                            width: 0;
+                            width: 100%;
                             height: 1px;
                             left: 0;
                             bottom: -6px;
                             background: #CD9B4A;
                             z-index: 9;
-                            transition: width 0.3s ease;
+                            transition: transform .3s ease-in-out;
+                            transform: scaleX(0);
                         }
 
                         &:hover::before {
-                            width: 100%;
+                            transform: scaleX(1);
                         }
 
                         @media screen and (max-width: 1199px) {
@@ -864,8 +875,6 @@
                         margin: 0 auto 0 0;
                     }
                 }
-
-
 
                 @media screen and (max-width:1374px) {
                     width: 95%;
@@ -962,6 +971,16 @@
             //         display: none;
             //     }
             // }
+
+            .button:hover {
+                background: @main-color;
+                color: @main-color-light !important;
+
+                .circle-left {
+                    border: 1px solid @main-color-light !important;
+                }
+            }
+
         }
     }
 
@@ -1186,24 +1205,24 @@
                         }
 
 
-
                         a {
                             position: relative;
 
                             &::before {
                                 content: '';
                                 position: absolute;
-                                width: 0;
+                                width: 100%;
                                 height: 1px;
                                 left: 0;
                                 bottom: -6px;
                                 background: #CD9B4A;
                                 z-index: 9;
-                                transition: width 0.3s ease;
+                                transition: transform .3s ease-in-out;
+                                transform: scaleX(0);
                             }
 
                             &:hover::before {
-                                width: 100%;
+                                transform: scaleX(1);
                             }
 
                             @media screen and (max-width: 1199px) {
@@ -1212,7 +1231,6 @@
                                 }
                             }
                         }
-
 
                         .menu-item-has-children {
                             .sub-menu {
@@ -1259,6 +1277,10 @@
                             color: #fff;
                         }
                     }
+
+                    &:hover {
+                        background: @main-color;
+                    }
                 }
 
                 .circle-left {
@@ -1272,7 +1294,6 @@
                     &:hover {
                         border: 1px solid @main-color;
                         color: @white !important;
-                        background: @main-color;
 
                         .circle-left {
                             border: 1px solid @white;
@@ -1286,7 +1307,6 @@
             height: ~'calc(100vh - 80px)';
             top: 80px;
         }
-
     }
 
     &.transparent {
@@ -1306,7 +1326,12 @@
                     gap: 110px;
 
                     @media screen and (max-width:1024px) {
-                        gap: 50px;
+                        gap: 20px;
+                        align-content: center;
+                    }
+
+                    @media screen and (max-width:600px) {
+                        min-height: 100vh;
                     }
                 }
             }
@@ -1400,7 +1425,7 @@
                                         height: 1px;
                                         left: 0;
                                         bottom: -6px;
-                                        background: #CD9B4A;
+                                        background: @white;
                                         z-index: 9;
                                     }
 
@@ -1541,17 +1566,18 @@
                             &::before {
                                 content: '';
                                 position: absolute;
-                                width: 0;
+                                width: 100%;
                                 height: 1px;
                                 left: 0;
                                 bottom: -6px;
-                                background: #ffffff;
+                                background: @white;
                                 z-index: 9;
-                                transition: width 0.3s ease;
+                                transition: transform .3s ease-in-out;
+                                transform: scaleX(0);
                             }
 
                             &:hover::before {
-                                width: 100%;
+                                transform: scaleX(1);
                             }
 
                             @media screen and (max-width: 1199px) {
@@ -1660,8 +1686,6 @@
                 a {
                     color: @main-color !important;
                 }
-
-
             }
 
             .header-menu-wrap>div>ul>li.current-menu-item>a {
@@ -1907,7 +1931,7 @@ html.html-wrapper {
 
     .header-wrap-mobile {
         height: @header-mobile-height-scrolled;
-        background: @main-color !important;
+        background: #C89D5D !important;
 
         &.show {
             .headerLogo.transparent {
@@ -1962,6 +1986,7 @@ html.html-wrapper {
     .burger-menu-wrap-mob {
         width: 45px;
         height: 60px;
+        background: #C89D5D;
     }
 
     .burger-menu::before,
@@ -2044,7 +2069,7 @@ html.html-wrapper {
             }
 
             &.show {
-                background: @main-color;
+                background: #C89D5D;
 
                 .headerLogo.transparent {
                     display: flex !important;
@@ -2119,7 +2144,7 @@ html.html-wrapper {
             }
 
             .burger-menu-wrap-mob {
-                background: @main-color;
+
 
                 // .burger-menu::before,
                 // .burger-menu::after,
@@ -2323,7 +2348,7 @@ html.html-wrapper {
 
 
     &.show {
-        background: @main-color;
+        background: #C89D5D;
 
         .headerLogo.transparent {
             display: flex !important;
@@ -2334,12 +2359,8 @@ html.html-wrapper {
         }
 
         .circle-left {
-            color: @white;
-            border: 1px solid @white;
-
-            .circle-left {
-                border: 1px solid @white;
-            }
+            color: @white !important;
+            border: 1px solid @white !important;
 
             &:hover {
                 border: 1px solid @main-color;
@@ -2481,7 +2502,7 @@ html.html-wrapper {
     height: ~"calc(100vh - 70px)";
     display: flex;
     flex-direction: column;
-    background-color: @main-color;
+    background-color: #C89D5D;
     visibility: hidden;
 
     .mob-menu-top {
