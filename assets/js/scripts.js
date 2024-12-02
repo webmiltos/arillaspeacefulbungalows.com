@@ -428,6 +428,7 @@ jQuery(".footer-menu-wrap").click(function () {
 });
 
 
+
 jQuery('.gallery-tab-link').on('click', function () {
 	jQuery('.gallery-tab-link').removeClass('active');
 	jQuery(this).addClass('active');

@@ -100,20 +100,25 @@ function smoothScrollingTo(target) {
 
 // Header Animations
 jQuery(document).ready(function () {
-    jQuery('.header-logos-wrapper').delay(300).queue(function (next) {
+    jQuery('.header-logos-wrapper').delay(100).queue(function (next) {
         jQuery(this).addClass('active');
         next();
     });
 
-    jQuery('.header-center-wrap').delay(500).queue(function (next) {
+    jQuery('.request-button').delay(100).queue(function (next) {
         jQuery(this).addClass('active');
         next();
     });
+});
 
-    jQuery('.header-right-wrap').delay(700).queue(function (next) {
-        jQuery(this).addClass('active');
-        next();
-    });
+
+jQuery(document).ready(function () {
+    jQuery('.header-link').hover(
+        function () {
+            jQuery('.product-item').removeClass('active');
+            jQuery(this).closest('.product-item').addClass('active');
+        },
+    );
 });
 
 
@@ -156,3 +161,38 @@ jQuery(document).ready(function () {
     });
 
 });
+
+
+
+
+
+
+
+
+
+
+
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
+
+// Check if the window width is greater than or equal to 1200px (desktop)
+if (window.innerWidth >= 1200) {
+    // Select the .gsap-item element
+    const gsapImage = document.querySelector('.gsap-item');
+
+    // Create the animation with GSAP
+    gsap.to(gsapImage, {
+        y: 200, // Move the element down by 150px
+        scrollTrigger: {
+            trigger: gsapImage, // Use the .gsap-item as the trigger
+            start: 'top center', // Animation starts when the top of the element reaches the top of the viewport
+            end: 'bottom top', // Animation ends when the bottom of the element reaches the bottom of the viewport
+            scrub: true, // Smooth scrolling animation tied to the scroll position
+            markers: false // Activate the markers to visualize the start and end points
+        }
+    });
+}
+
+
+
+

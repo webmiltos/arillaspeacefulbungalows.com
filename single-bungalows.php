@@ -3,226 +3,9 @@
 <main class="site-content single-bungalow-page">
 
     <section class="hero-slider-row show-on-scroll slide-up" style="transition-delay: 0.2s;">
-
         <div class="gallery-outside-wrap">
-            <style>
-                .hero-slider-row .gallery-section {
-                    position: relative;
-                    overflow: hidden;
-                }
-
-                /* Define the keyframes for the animation */
-                @keyframes slideTop {
-                    from {
-                        transform: translateY(0);
-                        /* Start above the element */
-                    }
-
-                    to {
-                        transform: translateY(100%);
-                        /* End in place */
-                    }
-                }
-
-                .hero-slider-row .gallery-wrapper {
-                    width: 100%;
-                    height: 100%;
-                    background: #F4F4ED !important;
-                }
-
-
-                .hero-slider-row .swiper-slide.swiper-slide-active {
-                    width: 15% !important;
-                    height: 630px;
-                    transition: all .5s ease-in-out;
-                }
-
-                .hero-slider-row .swiper-slide.swiper-slide-next {
-                    width: 70% !important;
-                    height: 630px;
-                    transition: all .5s ease-in-out;
-                }
-
-                .hero-slider-row .swiper-button-next,
-                .swiper-button-prev {
-                    position: absolute;
-                    top: var(--swiper-navigation-top-offset, 40%);
-                    width: calc(var(--swiper-navigation-size)/ 44 * 27);
-                    height: var(--swiper-navigation-size);
-                    margin-top: calc(0px - (var(--swiper-navigation-size)/ 2));
-                    z-index: 10;
-                    cursor: pointer;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    color: var(--swiper-navigation-color, var(--swiper-theme-color));
-                    transition: all .3s ease-in-out;
-                }
-
-                .swiper-button-next:hover,
-                .swiper-button-prev:hover {
-                    background: #ffffff36;
-                }
-
-                .hero-slider-row .gallery-wrapper::before {
-                    content: '';
-                    position: absolute;
-                    width: 100%;
-                    height: 100%;
-                    left: 0;
-                    top: 0;
-                    background: linear-gradient(180deg, rgba(30, 30, 30, 0.41778718323266806) 0%, rgba(30, 30, 30, 0) 100%);
-                }
-
-                .hero-slider-row .mid-container {
-                    width: 100%;
-                    padding: 0;
-                    max-width: unset;
-                }
-
-                .hero-slider-row .swiper-slide {
-                    width: 100%;
-                    height: 630px;
-                }
-
-                .hero-slider-row .swiper-button-prev::after,
-                .hero-slider-row .swiper-rtl .swiper-button-next::after {
-                    content: 'prev';
-                    font-size: 11px !important;
-                    color: #FFF !important;
-                    left: 36px !important;
-                    top: 77px !important;
-                    position: absolute !important;
-                }
-
-                .hero-slider-row .swiper-button-prev::before,
-                .hero-slider-row .swiper-rtl .swiper-button-next::before {
-                    content: unset !important;
-                }
-
-                .hero-slider-row .swiper-button-next::after,
-                .hero-slider-row .swiper-rtl .swiper-button-prev::after {
-                    content: 'next' !important;
-                    font-size: 11px !important;
-                    right: 54px;
-                    top: 77px !important;
-                    color: #fff !important;
-                    position: absolute !important;
-                }
-
-                .hero-slider-row .swiper-button-next::before,
-                .hero-slider-row .swiper-rtl .swiper-button-prev::before {
-                    content: unset !important;
-                }
-
-                .hero-slider-row .swiper-button-next,
-                .hero-slider-row .swiper-button-prev {
-                    border: 1px solid;
-                    border-radius: 50%;
-                    width: 170px;
-                    height: 170px;
-                    color: #FFF !important;
-                }
-
-                @media screen and (max-width:1024px) {
-                    .hero-slider-row {
-                        height: 430px !important;
-                        position: relative;
-                    }
-
-                    .hero-slider-row .swiper-slide {
-                        height: 430px !important;
-                    }
-
-                    .hero-slider-row .swiper-slide.swiper-slide-active {
-                        width: 15% !important;
-                        height: 430px;
-                        transition: all .5s ease-in-out;
-                    }
-
-                    .hero-slider-row .swiper-slide.swiper-slide-next {
-                        width: 70% !important;
-                        height: 430px;
-                        transition: all .5s ease-in-out;
-                    }
-
-                    .hero-slider-row .swiper-button-next,
-                    .hero-slider-row .swiper-button-prev {
-                        position: absolute;
-                        top: var(--swiper-navigation-top-offset, 80%);
-                        width: calc(var(--swiper-navigation-size)/ 44 * 27);
-                        height: var(--swiper-navigation-size);
-                        margin-top: calc(0px - (var(--swiper-navigation-size)/ 2));
-                        z-index: 10;
-                        cursor: pointer;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        color: var(--swiper-navigation-color, var(--swiper-theme-color));
-                        transition: all .3s ease-in-out;
-                    }
-
-
-                    .hero-slider-row .swiper-button-next,
-                    .hero-slider-row .swiper-button-prev {
-                        border: 1px solid;
-                        border-radius: 50%;
-                        width: 90px;
-                        height: 90px;
-                        color: #FFF !important;
-                    }
-
-                    .hero-slider-row .swiper-button-next::after,
-                    .hero-slider-row .swiper-rtl .swiper-button-prev::after {
-                        content: none !important;
-                    }
-
-                    .hero-slider-row .swiper-button-prev::after,
-                    .hero-slider-row .swiper-rtl .swiper-button-next::after {
-                        content: none !important;
-                    }
-                }
-
-                @media screen and (max-width:600px) {
-                    .hero-slider-row .swiper-slide {
-                        width: 100%;
-                    }
-
-                    .hero-slider-row .swiper-button-prev::after,
-                    .hero-slider-row .swiper-rtl .swiper-button-next::after {
-                        left: 18px !important;
-                    }
-
-                    .hero-slider-row .swiper-button-prev,
-                    .hero-slider-row .swiper-rtl .swiper-button-next {
-                        left: var(--swiper-navigation-sides-offset, 4px);
-                        right: auto;
-                    }
-
-                    .hero-slider-row .swiper-button-next,
-                    .hero-slider-row .swiper-button-prev {
-                        padding: 21px !important;
-                    }
-
-                    .hero-slider-row .swiper-button-next::after,
-                    .hero-slider-row .swiper-rtl .swiper-button-prev::after {
-                        right: 18px;
-                    }
-
-                    .hero-slider-row .swiper-button-next,
-                    .hero-slider-row .swiper-rtl .swiper-button-prev {
-                        right: var(--swiper-navigation-sides-offset, 2px);
-                        left: auto;
-                    }
-
-                    .gallery-section .scroll-to-gallery {
-                        left: 29%;
-                        bottom: 5%;
-                    }
-                }
-            </style>
-            <section class="gallery-section">
-                <div class="gallery-wrapper singlePropertySwiper2">
+            <div class="gallery-section">
+                <div class="gallery-wrapper singlePropertySwiper">
                     <div class="swiper-wrapper">
                         <?php
                         $images = get_field('gallery');
@@ -237,9 +20,8 @@
                     <div class="swiper-button-prev">PREVIOUS</div>
                     <div class="swiper-button-next">NEXT</div>
                 </div>
-            </section>
+            </div>
         </div>
-
         <div class="hero-slider-content">
             <div class="content-wrap container">
                 <h1 class="title extra-large white"><?php the_title(); ?></h1>
@@ -250,7 +32,6 @@
                 </a>
             </div>
         </div>
-
     </section>
 
 

@@ -31,6 +31,18 @@ function add_assets()
     // Anime JS
     // wp_enqueue_script( 'anime', get_template_directory_uri() . '/assets/includes/anime.min.js', array ('jquery'), filemtime( get_stylesheet_directory() . '/assets/includes/anime.min.js'), true);
 
+    // GSAP Library
+    wp_enqueue_script('gsap', '//cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js', array(), null, true);
+
+    // Enqueue ScrollTrigger
+    wp_enqueue_script('scrolltrigger', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js', array('gsap'), null, true);
+
+    // Enqueue Select2 CSS
+    wp_enqueue_style('select2-css', 'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css');
+
+    // Enqueue Select2 JavaScript
+    wp_enqueue_script('select2-js', 'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js', array('jquery'), null, true);
+
     // Script JS
     wp_enqueue_script('scripts', get_template_directory_uri() . '/assets/js/scripts.js', array('jquery'), filemtime(get_stylesheet_directory() . '/assets/js/scripts.js'), true);
 
@@ -41,7 +53,7 @@ function add_assets()
     wp_enqueue_script('google', get_template_directory_uri() . '/assets/js/google.js', array('jquery', 'google-maps'), filemtime(get_stylesheet_directory() . '/assets/js/google.js'), true);
 
     // Animations JS
-    wp_enqueue_script('animations', get_template_directory_uri() . '/assets/js/animations.js', array('jquery'), filemtime(get_stylesheet_directory() . '/assets/js/animations.js'), true);
+    wp_enqueue_script('animations', get_template_directory_uri() . '/assets/js/animations.js', array('jquery', 'gsap'), filemtime(get_stylesheet_directory() . '/assets/js/animations.js'), true);
 }
 add_action('wp_enqueue_scripts', 'add_assets');
 

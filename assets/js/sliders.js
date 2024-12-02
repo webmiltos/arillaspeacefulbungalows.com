@@ -15,7 +15,7 @@ var heroSwiper = new Swiper(".heroSwiper", {
 
 
 //Single Bungalow Slider
-var heroSlider = new Swiper(".singlePropertySwiper2", {
+var heroSlider = new Swiper(".singlePropertySwiper", {
     slidesPerView: 3,
     spaceBetween: 10,
     centeredSlides: false,
@@ -30,7 +30,7 @@ var heroSlider = new Swiper(".singlePropertySwiper2", {
     // },
     breakpoints: {
         240: {
-            slidesPerView: 3,
+            slidesPerView: 1.1,
             spaceBetween: 10,
             loop: true,
         },

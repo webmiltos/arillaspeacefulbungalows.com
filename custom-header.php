@@ -162,7 +162,7 @@
                 </div> -->
 
                 <?php if (get_field('reservations_link', 'options')) : ?>
-                    <a href="<?php the_field('reservations_link', 'options'); ?>" class="button border circle-left">
+                    <a href="<?php the_field('reservations_link', 'options'); ?>" class="button border circle-left request-button">
                         <span class="circle-left"></span>
                         <?php _e('Reservations', 'gocreations'); ?>
                         <!-- <i class="gg-arrow-right-o"></i> -->
@@ -189,15 +189,3 @@
     </div>
 
 </header>
-
-
-<script>
-    jQuery(document).ready(function() {
-        jQuery('.header-link').hover(
-            function() {
-                jQuery('.product-item').removeClass('active');
-                jQuery(this).closest('.product-item').addClass('active');
-            },
-        );
-    });
-</script>

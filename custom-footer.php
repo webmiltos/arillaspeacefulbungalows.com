@@ -1,24 +1,18 @@
 <?php /* Custom Footer */ ?>
 
-
 <footer class="custom-footer">
-
-
     <div class="footer-wrapper">
         <div class="footer-wrap">
             <div class="container flex">
                 <div class="content-left">
                     <div class="footer-menu-wrap logo grid">
-
                         <div class="footer-left-texts">
                             <?php if (get_field('footer_title', 'options')) : ?>
                                 <h4 class="title large"><?php the_field('footer_title', 'options'); ?></h4>
                             <?php endif; ?>
-
                             <?php if (get_field('footer_title', 'options')) : ?>
                                 <p class="text"><?php the_field('footer_text', 'options'); ?></p>
                             <?php endif; ?>
-
                             <div class="social-wrap">
                                 <?php if (get_field('instagram', 'options')) : ?>
                                     <a href="<?php the_field('instagram', 'options') ?>" class="text white" target="_blank">
@@ -31,7 +25,6 @@
                                     </a>
                                 <?php endif; ?>
                             </div>
-
                             <button>
                                 <a class="button-circle" href="<?php the_field('contact_link', 'options') ?>" target="_blank">Contact Us</a>
                             </button>
@@ -39,11 +32,10 @@
                     </div>
                 </div>
                 <div class="content-right">
-
                     <div class="footer-image-wrap">
                         <?php
                         $image = get_field('footer_image', 'options');
-                        $size = 'large';
+                        $size = 'very_large';
                         if ($image) : ?>
                             <?php echo wp_get_attachment_image($image['id'], $size); ?>
                         <?php endif; ?>

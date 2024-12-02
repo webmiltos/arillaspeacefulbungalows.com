@@ -14,10 +14,7 @@ $cars_arr = getAllGcCarModels($lang, $db_id);
 // echo "</pre>";
 ?>
 
-
-
 <main class="site-content home-page">
-
     <section class="intro-wrapper">
         <div class="intro-wrap">
             <div class="single-slider-wrapper swiper-container heroSwiper">
@@ -41,10 +38,10 @@ $cars_arr = getAllGcCarModels($lang, $db_id);
             </div>
             <div class="intro-content-wrapper container">
                 <div class="content-left">
-                    <h1 class="intro-title white show-on-scroll slide-left" style=" transition-delay: 0.1s;">
+                    <h1 class="intro-title white show-on-scroll slide-up" style=" transition-delay: 0.3s;">
                         <?php the_field('intro_title'); ?>
                     </h1>
-                    <p class="text large white subtitle show-on-scroll slide-left" style=" transition-delay: 0.2s;"><?php the_field('intro_subtitle'); ?></p>
+                    <p class="text large white subtitle show-on-scroll slide-up" style=" transition-delay: 0.35s;"><?php the_field('intro_subtitle'); ?></p>
 
                     <?php if (get_field('intro_button_link')) : ?> <div class="border-btn-wrapper">
                             <a class="border-btn-wrap white" href="<?php the_field('intro_button_link') ?>">
@@ -58,10 +55,9 @@ $cars_arr = getAllGcCarModels($lang, $db_id);
                     <?php endif; ?>
                 </div>
             </div>
-            <div class="search-form-wrapper container full center show-on-scroll slide-up" style="transition-delay: 0.3s;">
+            <div class="search-form-wrapper container full center show-on-scroll slide-up" style="transition-delay: 0.4s;">
                 <?php // echo do_shortcode('[search_form id="655"]'); 
                 ?>
-
                 <form target="_blank" action="#" method="POST">
                     <input type="hidden" name="siteKey" value="">
                     <input type="hidden" name="lang" value="en">
@@ -114,51 +110,50 @@ $cars_arr = getAllGcCarModels($lang, $db_id);
     </section>
 
 
-    <section class="welcome-section paddings container bg-color">
+
+    <section class="welcome-section paddings container">
         <div class="content-main container flex">
             <div class="content-left">
-                <div class="image-wrapper">
+                <div class="image-wrapper show-on-scroll slide-up" style=" transition-delay: 0.05s;">
                     <?php $image = get_field('welcome_image_left');
                     if (!empty($image)): ?>
                         <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
                     <?php endif; ?>
-                    <p class="text main-color"><?php the_field('welcome_text'); ?></p>
+                    <p class="text main-color show-on-scroll slide-up" style=" transition-delay: 0.06s;"><?php the_field('welcome_text'); ?></p>
                 </div>
             </div>
             <div class="content-right">
-                <div class="image-wrapper">
+                <div class="image-wrapper show-on-scroll slide-up" style=" transition-delay: 0.07s;">
                     <?php $image = get_field('welcome_image_right');
                     if (!empty($image)): ?>
                         <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
                     <?php endif; ?>
                 </div>
             </div>
-
-            <div class="content-fixed container center">
-                <div class="text main-color pretitle"><?php the_field('welcome_pretitle'); ?></div>
-                <h2 class="title extra-large main-color margin-bottom-small"><?php the_field('welcome_title'); ?></h2>
+            <div class="content-fixed container center gsap-item">
+                <div class="text main-color pretitle show-on-scroll slide-up" style=" transition-delay: 0.08s;"><?php the_field('welcome_pretitle'); ?></div>
+                <h2 class="title extra-large main-color margin-bottom-small show-on-scroll slide-up" style=" transition-delay: 0.09s;"><?php the_field('welcome_title'); ?></h2>
             </div>
         </div>
-
     </section>
 
 
     <section class="our-hall-section container flex">
         <div class="content-left">
-            <div class="content-left-wrap">
+            <div class="content-left-wrap show-on-scroll slide-up" style=" transition-delay: 0.01s;">
                 <?php
                 $image = get_field('hall_image_left', 352);
                 $size = 'large';
                 if ($image) : ?>
                     <?php echo wp_get_attachment_image($image['id'], $size); ?>
                 <?php endif; ?>
-                <p class="title medium uppercase main-color"><?php the_field('hall_title', 352); ?></p>
-                <p class="text medium main-color"><?php the_field('hall_text', 352); ?></p>
-                <a class="text-button text uppercase main-color" href="<?php the_field('hall_link', 'options'); ?>">Learn More</a>
+                <p class="title medium uppercase main-color show-on-scroll slide-up" style=" transition-delay: 0.03s;"><?php the_field('hall_title', 352); ?></p>
+                <p class="text medium main-color show-on-scroll slide-up" style=" transition-delay: 0.06s;"><?php the_field('hall_text', 352); ?></p>
+                <a class="text-button text uppercase main-color show-on-scroll slide-up" style=" transition-delay: 0.09s;" href="<?php the_field('hall_link', 'options'); ?>">Learn More</a>
 
             </div>
         </div>
-        <div class="content-right">
+        <div class="content-right show-on-scroll slide-up" style=" transition-delay: 0.01s;">
             <?php $image = get_field('hall_image_right', 352);
             if (!empty($image)) : ?>
                 <img src="<?php echo $image['sizes']['very_large']; ?>" alt="<?php echo $image['alt']; ?>" />
@@ -169,10 +164,10 @@ $cars_arr = getAllGcCarModels($lang, $db_id);
 
     <section class="more-posts-section bg-color paddings">
         <div class="container center">
-            <h3 class="title large main-color"><?php _e('Our Bungalows'); ?></h3>
-            <p class="text main-color">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum.</p>
+            <h3 class="title large main-color show-on-scroll slide-up" style=" transition-delay: 0.01s;"><?php _e('Our Bungalows'); ?></h3>
+            <p class=" text main-color show-on-scroll slide-up" style=" transition-delay: 0.06s;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum.</p>
         </div>
-        <div class="container full flex">
+        <div class="container full flex show-on-scroll slide-up" style=" transition-delay: 0.07s;">
             <?php $i = 1; ?>
             <?php
 
@@ -191,13 +186,13 @@ $cars_arr = getAllGcCarModels($lang, $db_id);
                 while ($query->have_posts()) {
                     $query->the_post(); ?>
 
-                    <a href="<?php the_permalink(); ?>" class="post-item<?php echo $i % 2 === 0 ? ' reverse' : ''; ?> show-on-scroll slide-right" style="transition-delay: 0.2s;">
-                        <div class="image-wrap">
+                    <a href="<?php the_permalink(); ?>" class="post-item<?php echo $i % 2 === 0 ? ' reverse' : ''; ?> ">
+                        <div class=" image-wrap">
                             <?php $image = get_field('about_image');
                             if (!empty($image)) : ?>
                                 <img src="<?php echo esc_url($image['sizes']['very_large']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
                             <?php endif; ?>
-                            <p class="title medium uppercase white center"><?php the_title(''); ?></p>
+                            <p class="title medium uppercase white center show-on-scroll slide-up" style="transition-delay: 0.09s;"><?php the_title(''); ?></p>
                         </div>
                     </a>
 
@@ -208,23 +203,22 @@ $cars_arr = getAllGcCarModels($lang, $db_id);
             }
             ?>
         </div>
-        <a class="button-circle flex center" href="<?php the_field('bungalows_link', 'options'); ?>" target="_blank">View All</a>
-
+        <a class="button-circle flex center show-on-scroll slide-up" style=" transition-delay: 0.01s;" href="<?php the_field('bungalows_link', 'options'); ?>" target="_blank">View All</a>
     </section>
 
     <?php
     $image = get_field('facilities_image');
     if (!empty($image)) : ?>
         <section class="facilities-section bg-color container" style="background-image: url(<?php echo $image['url']; ?>); background-size: cover;  background-repeat: no-repeat; background-position: center center;">
-            <div class="content-top show-on-scroll slide-left" style=" transition-delay: 0.1s;">
-                <h2 class="title extra-large white"><?php the_field('facilities_title'); ?></h2>
-                <p class="text margin-bottom white"><?php the_field('facilities_text'); ?></p>
+            <div class="content-top">
+                <h2 class="title extra-large white show-on-scroll slide-up" style=" transition-delay: 0.01s;"><?php the_field('facilities_title'); ?></h2>
+                <p class="text margin-bottom white show-on-scroll slide-up" style=" transition-delay: 0.04s;"><?php the_field('facilities_text'); ?></p>
             </div>
             <div class="content-bottom">
                 <div class="facilities-repeater-1">
                     <?php if (get_field('facilities_repeater')) : ?>
                         <?php while (the_repeater_field('facilities_repeater')) : ?>
-                            <div class="single-item show-on-scroll slide-right" style="transition-delay: 0.1s;">
+                            <div class="single-item show-on-scroll slide-up" style="transition-delay: 0.1s;">
                                 <div class="texts-wrap">
                                     <p class="text small show-on-scroll slide-down" style="transition-delay: 0.15s;"><?php the_sub_field('title'); ?></p>
 
@@ -251,12 +245,11 @@ $cars_arr = getAllGcCarModels($lang, $db_id);
         </section>
     <?php endif; ?>
 
-
-    <section class="gallery-section dark-bg paddings show-on-scroll slide-up" style="transition-delay: 0.2s;">
+    <section class="gallery-section dark-bg paddings">
         <div class="container flex reverse">
             <div class="content-left grid floating-labels-form">
-                <h2 class="title extra-large main-color margin-bottom"><?php the_field('gallery_title'); ?></h2>
-                <p class="text main-color">
+                <h2 class="title extra-large main-color margin-bottom show-on-scroll slide-up" style=" transition-delay: 0.05s;"><?php the_field('gallery_title'); ?></h2>
+                <p class="text main-color show-on-scroll slide-up" style=" transition-delay: 0.09s;">
                     <?php the_field('gallery_text'); ?>
                 </p>
                 <a class="button-circle hover-green" href="<?php the_field('gallery_link', 'options'); ?>" target="_blank">View All</a>
@@ -272,8 +265,6 @@ $cars_arr = getAllGcCarModels($lang, $db_id);
                 </div>
             </div>
     </section>
-
-
 </main>
 
 <?php get_footer(); ?>

@@ -19,7 +19,6 @@
                 <div class="flex-wrap">
                     <?php while (have_rows('gallery_repeater')) : the_row(); ?>
                         <?php if (!get_sub_field('title')) continue; ?>
-
                         <h3 class="tab-link gallery-tab-link<?php echo (get_row_index() === 1) ? ' active' : null; ?>" data-id="<?php echo get_row_index(); ?>">
                             <?php the_sub_field('title'); ?>
                         </h3>
