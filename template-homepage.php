@@ -38,6 +38,7 @@ $cars_arr = getAllGcCarModels($lang, $db_id);
             </div>
             <div class="intro-content-wrapper container">
                 <div class="content-left">
+
                     <h1 class="intro-title white show-on-scroll slide-up" style=" transition-delay: 0.3s;">
                         <?php the_field('intro_title'); ?>
                     </h1>
@@ -110,7 +111,6 @@ $cars_arr = getAllGcCarModels($lang, $db_id);
     </section>
 
 
-
     <section class="welcome-section paddings container">
         <div class="content-main container flex">
             <div class="content-left">
@@ -139,7 +139,7 @@ $cars_arr = getAllGcCarModels($lang, $db_id);
 
 
     <section class="our-hall-section container flex">
-        <div class="content-left">
+        <div class="content-left gsap-item2">
             <div class="content-left-wrap show-on-scroll slide-up" style=" transition-delay: 0.01s;">
                 <?php
                 $image = get_field('hall_image_left', 352);
@@ -248,13 +248,14 @@ $cars_arr = getAllGcCarModels($lang, $db_id);
     <section class="gallery-section dark-bg paddings">
         <div class="container flex reverse">
             <div class="content-left grid floating-labels-form">
+
                 <h2 class="title extra-large main-color margin-bottom show-on-scroll slide-up" style=" transition-delay: 0.05s;"><?php the_field('gallery_title'); ?></h2>
                 <p class="text main-color show-on-scroll slide-up" style=" transition-delay: 0.09s;">
                     <?php the_field('gallery_text'); ?>
                 </p>
                 <a class="button-circle hover-green" href="<?php the_field('gallery_link', 'options'); ?>" target="_blank">View All</a>
             </div>
-            <div class="content-right show-on-scroll slide-up" style="transition-delay: 0.1s;">
+            <div class="content-right gsap-item2 show-on-scroll slide-up" style="transition-delay: 0.1s;">
                 <div class="footer-image-wrap">
                     <?php
                     $image = get_field('gallery_image');

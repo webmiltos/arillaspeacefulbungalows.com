@@ -322,28 +322,41 @@ jQuery(document).ready(function ($) { //no conflict
 
 
 // DATEPICKERS
+// Initialize the Check-In Date Picker
 var checkInDatepicker = jQuery("#your-check-in").flatpickr({
 	dateFormat: "d M Y",
 	"locale": {
-		"firstDayOfWeek": 1 // start week on Monday
+		"firstDayOfWeek": 1 // Start week on Monday
 	},
 	minDate: "today",
 	disableMobile: true,
 	onChange: function (selectedDates) {
-		const selectedDate = selectedDates[0];
-		const nextDay = new Date(selectedDate.getTime());
-		nextDay.setDate(selectedDate.getDate() + 1); // Add 1 day
-		checkOutDatepicker.set("minDate", nextDay);
+		if (selectedDates.length > 0) {
+			const selectedDate = selectedDates[0];
+			const nextDay = new Date(selectedDate.getTime());
+			nextDay.setDate(selectedDate.getDate() + 1); // Add 1 day
+			checkOutDatepicker.set("minDate", nextDay); // Set check-out minDate to the next day
+		}
 	}
 });
+
+// Initialize the Check-Out Date Picker
 var checkOutDatepicker = jQuery("#your-check-out").flatpickr({
 	dateFormat: "d M Y",
 	"locale": {
-		"firstDayOfWeek": 1 // start week on Monday
+		"firstDayOfWeek": 1 // Start week on Monday
 	},
+	minDate: "tomorrow", // Default to tomorrow
 	disableMobile: true,
-	minDate: "today",
+	onChange: function (selectedDates) {
+		if (selectedDates.length > 0) {
+			const selectedDate = selectedDates[0];
+			console.log("Check-out date selected:", selectedDate);
+		}
+	}
 });
+
+// Optional Time Picker
 jQuery('#your-time').flatpickr({
 	enableTime: true,
 	noCalendar: true,
@@ -354,37 +367,11 @@ jQuery('#your-time').flatpickr({
 	disableMobile: true
 });
 
+// Ensure form validation
 document.addEventListener('DOMContentLoaded', function () {
-	// Date picker elements
 	const checkInInput = document.getElementById('your-check-in');
 	const checkOutInput = document.getElementById('your-check-out');
 
-	// Initialize Flatpickr with the correct date format and minDate option
-	if (window.flatpickr) {
-		flatpickr(checkInInput, {
-			dateFormat: "Y-m-d", // Submitted format
-			altInput: true,
-			altFormat: "d M Y", // Displayed format
-			minDate: "today",
-			onChange: function (selectedDates) {
-				// Optional: Additional logic for date handling
-			}
-		});
-
-		flatpickr(checkOutInput, {
-			dateFormat: "d M Y",
-			minDate: "today", // Disable all dates before today
-			onChange: function (selectedDates) {
-				const selectedDate = selectedDates[0];
-				const day = String(selectedDate.getDate()).padStart(2, '0');
-				const month = String(selectedDate.getMonth() + 1).padStart(2, '0');
-				const year = selectedDate.getFullYear();
-				checkOutInput.value = `${year}-${month}-${day}`;
-			}
-		});
-	}
-
-	// Form submit event
 	document.getElementById('submit').addEventListener('click', function (e) {
 		if (!checkInInput.value || !checkOutInput.value) {
 			e.preventDefault(); // Prevent form submission if dates are not selected
@@ -392,6 +379,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		}
 	});
 });
+
 
 
 

@@ -744,6 +744,7 @@
 							letter-spacing: 1px;
 							font-size: 16px;
 							font-weight: 300 !important;
+
 						}
 
 						select {
@@ -754,6 +755,7 @@
 							option {
 								font-weight: 300 !important;
 								background: #fff;
+
 							}
 						}
 
@@ -819,6 +821,7 @@
 						grid-template-columns: 40% 40%;
 						padding: 30px 10px;
 						width: 100%;
+						gap: 30px 0;
 
 						.single-field {
 							&::after {
@@ -826,7 +829,7 @@
 								position: absolute;
 								width: 1;
 								height: 100%;
-								right: 15px;
+								right: 20px;
 								bottom: 3px;
 								border-right: none;
 								z-index: 9;
@@ -970,6 +973,19 @@
 			padding: 0;
 			gap: 0;
 			max-height: 760px;
+
+
+			.gsap-item2 .content-left-wrap::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				transform: translateY(var(--pseudo-before-y, 0));
+				transition: transform 0.3s ease;
+			}
+
 
 			.content-left {
 				display: grid;
@@ -1542,6 +1558,18 @@
 		.container {
 			padding: 5% 9%;
 			align-items: center;
+
+
+			.gsap-item2 .footer-image-wrap::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				transform: translateY(var(--pseudo-before-y, 0));
+				transition: transform 0.3s ease;
+			}
 
 			.content-left {
 				padding: 3% 7%;

@@ -571,7 +571,7 @@
                                         height: 100%;
                                         max-height: unset;
                                         justify-content: inherit;
-                                        gap: 25px;
+                                        gap: 16px;
 
                                         .product-item {
                                             width: max-content;
@@ -1075,7 +1075,7 @@
                                     &::after {
                                         content: '';
                                         right: -22px;
-                                        width: 19px;
+                                        width: 20px;
                                         height: 19px;
                                         // border-bottom: 1px solid @main-color;
                                         // border-right: 1px solid @main-color;
@@ -2536,7 +2536,8 @@ html.html-wrapper {
             &.menu-item-has-children {
                 display: block;
                 cursor: pointer;
-                width: 60%;
+                width: 100%;
+                max-width: 260px;
                 margin: auto;
 
                 a {
@@ -2546,7 +2547,7 @@ html.html-wrapper {
                         content: '';
                         position: absolute;
                         top: 11px;
-                        right: -35px;
+                        right: 0;
                         width: 26px;
                         height: 26px;
                         background-image: url('assets/images/menu-arrow-white.png');

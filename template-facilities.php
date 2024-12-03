@@ -83,7 +83,7 @@
 
 
     <section class="our-hall-section container flex">
-        <div class="content-left">
+        <div class="content-left gsap-item2">
             <div class="content-left-wrap">
                 <?php
                 $image = get_field('hall_image_left');

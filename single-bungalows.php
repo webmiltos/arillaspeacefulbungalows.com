@@ -35,6 +35,10 @@
     </section>
 
 
+
+
+
+
     <section class="welcome-section paddings container bg-color">
         <div class="content-top">
             <h2 class="title large main-color margin-bottom-small"><?php the_field('welcome_title'); ?></h2>
@@ -125,7 +129,7 @@
         </div>
     </section>
 
-    <div id="gallery" class="section-gallery">
+    <section id="gallery" class="section-gallery">
         <div class="container full">
             <?php $images = get_field('gallery'); ?>
             <?php if (!empty($images)) : ?>
@@ -149,8 +153,7 @@
                 </div>
             <?php endif; ?>
         </div>
-
-    </div>
+    </section>
 
     <section class="more-posts-section bg-color paddings">
         <div class="container center">
@@ -191,15 +194,10 @@
                 // No posts found
             }
             ?>
-
-
         </div>
 
         <a class="button-circle flex center" href="<?php the_field('bungalows_link', 'options'); ?>" target="_blank">View All</a>
-
     </section>
-
-    </div>
 
 
 </main>

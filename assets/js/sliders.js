@@ -18,29 +18,38 @@ var heroSwiper = new Swiper(".heroSwiper", {
 var heroSlider = new Swiper(".singlePropertySwiper", {
     slidesPerView: 3,
     spaceBetween: 10,
-    centeredSlides: false,
+    centeredSlides: true,
     loop: true,
     navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev"
     },
-    // autoplay: {
-    //     delay: 3500,
-    //     disableOnInteraction: true,
-    // },
+    keyboard: {
+        enabled: true
+    },
+    autoplay: {
+        delay: 3500,
+        disableOnInteraction: true,
+    },
     breakpoints: {
         240: {
-            slidesPerView: 1.1,
+            slidesPerView: 1.05,
             spaceBetween: 10,
             loop: true,
+            centeredSlides: false,
         },
         768: {
-            slidesPerView: 3,
+            slidesPerView: 1.4,
             spaceBetween: 10,
             loop: true,
         },
-        1324: {
-            slidesPerView: 3,
+        1024: {
+            slidesPerView: 1.6,
+            spaceBetween: 10,
+            loop: true,
+        },
+        1450: {
+            slidesPerView: 1.3,
             spaceBetween: 10,
         },
     }

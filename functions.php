@@ -356,7 +356,7 @@ function wpdocs_menu_item_custom_output($item_output, $item, $depth, $args)
             $args = array(
                 'post_type' => $type,
                 'post_status' => 'publish',
-                'posts_per_page' => 6,
+                'posts_per_page' => 7,
                 'orderby'    => 'date',
                 'order'  => 'ASC',
             );

@@ -165,34 +165,47 @@ jQuery(document).ready(function () {
 
 
 
+// // Register ScrollTrigger plugin
+// gsap.registerPlugin(ScrollTrigger);
 
+// // Check if the window width is greater than or equal to 1400px (desktop)
+// if (window.innerWidth >= 1400) {
+//     // GSAP animations
+//     const animations = [
+//         {
+//             target: '.gsap-item',
+//             properties: { y: 200 }, // Move the element down by 200px
+//             trigger: '.gsap-item', // Use the .gsap-item as the trigger
+//         },
+//         {
+//             target: '.gsap-item2 .content-left-wrap',
+//             properties: { '--pseudo-before-y': '250px' }, // Custom property for animating the pseudo-element
+//             trigger: '.gsap-item2 .content-left-wrap', // Use the .content-left-wrap as the trigger
+//         },
+//         {
+//             target: '.gsap-item2 .footer-image-wrap',
+//             properties: { '--pseudo-before-y': '450px' }, // Custom property for animating the pseudo-element
+//             trigger: '.gsap-item2 .footer-image-wrap', // Use the .footer-image-wrap as the trigger
+//         }
+//     ];
 
+//     animations.forEach(({ target, properties, trigger }) => {
+//         const element = document.querySelector(target);
 
-
-
-
-
-// Register ScrollTrigger plugin
-gsap.registerPlugin(ScrollTrigger);
-
-// Check if the window width is greater than or equal to 1200px (desktop)
-if (window.innerWidth >= 1200) {
-    // Select the .gsap-item element
-    const gsapImage = document.querySelector('.gsap-item');
-
-    // Create the animation with GSAP
-    gsap.to(gsapImage, {
-        y: 200, // Move the element down by 150px
-        scrollTrigger: {
-            trigger: gsapImage, // Use the .gsap-item as the trigger
-            start: 'top center', // Animation starts when the top of the element reaches the top of the viewport
-            end: 'bottom top', // Animation ends when the bottom of the element reaches the bottom of the viewport
-            scrub: true, // Smooth scrolling animation tied to the scroll position
-            markers: false // Activate the markers to visualize the start and end points
-        }
-    });
-}
-
+//         if (element) {
+//             gsap.to(element, {
+//                 ...properties,
+//                 scrollTrigger: {
+//                     trigger: trigger, // Set the trigger element
+//                     start: 'top center', // Animation starts when the top of the element reaches the center of the viewport
+//                     end: 'bottom top', // Animation ends when the bottom of the element reaches the top of the viewport
+//                     scrub: true, // Smooth scrolling animation tied to the scroll position
+//                     markers: false // Set to true to visualize the start and end points
+//                 }
+//             });
+//         }
+//     });
+// }
 
 
 
