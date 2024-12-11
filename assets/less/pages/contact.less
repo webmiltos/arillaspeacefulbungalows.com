@@ -289,6 +289,26 @@
             background: @main-color;
             transition: all .3s ease-in-out;
         }
+
+        @media screen and (max-width:1727px) {
+            &:before {
+                top: -27px;
+            }
+
+            &:after {
+                top: -24px;
+            }
+        }
+
+        @media screen and (max-width:449px) {
+            &:before {
+                top: -53px;
+            }
+
+            &:after {
+                top: -50px;
+            }
+        }
     }
 
     input:checked {

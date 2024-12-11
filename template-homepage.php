@@ -150,7 +150,6 @@ $cars_arr = getAllGcCarModels($lang, $db_id);
                 <p class="title medium uppercase main-color show-on-scroll slide-up" style=" transition-delay: 0.03s;"><?php the_field('hall_title', 352); ?></p>
                 <p class="text medium main-color show-on-scroll slide-up" style=" transition-delay: 0.06s;"><?php the_field('hall_text', 352); ?></p>
                 <a class="text-button text uppercase main-color show-on-scroll slide-up" style=" transition-delay: 0.09s;" href="<?php the_field('hall_link', 'options'); ?>">Learn More</a>
-
             </div>
         </div>
         <div class="content-right show-on-scroll slide-up" style=" transition-delay: 0.01s;">
@@ -203,7 +202,7 @@ $cars_arr = getAllGcCarModels($lang, $db_id);
             }
             ?>
         </div>
-        <a class="button-circle flex center show-on-scroll slide-up" style=" transition-delay: 0.01s;" href="<?php the_field('bungalows_link', 'options'); ?>" target="_blank">View All</a>
+        <a class="button-circle flex center show-on-scroll slide-up" style=" transition-delay: 0.01s;" href="<?php the_field('bungalows_link', 'options'); ?>">View All</a>
     </section>
 
     <?php
@@ -240,7 +239,7 @@ $cars_arr = getAllGcCarModels($lang, $db_id);
                         <?php endwhile; ?>
                     <?php endif; ?>
                 </div>
-                <a class="button-circle white  flex center" href="#" target="_blank">View All</a>
+                <a class="button-circle white  flex center" href="<?php the_field('facilities_link', 'options'); ?>">View All</a>
             </div>
         </section>
     <?php endif; ?>
@@ -253,7 +252,7 @@ $cars_arr = getAllGcCarModels($lang, $db_id);
                 <p class="text main-color show-on-scroll slide-up" style=" transition-delay: 0.09s;">
                     <?php the_field('gallery_text'); ?>
                 </p>
-                <a class="button-circle hover-green" href="<?php the_field('gallery_link', 'options'); ?>" target="_blank">View All</a>
+                <a class="button-circle hover-green" href="<?php the_field('gallery_link', 'options'); ?>">View All</a>
             </div>
             <div class="content-right gsap-item2 show-on-scroll slide-up" style="transition-delay: 0.1s;">
                 <div class="footer-image-wrap">

@@ -26,7 +26,7 @@
                                 <?php endif; ?>
                             </div>
                             <button>
-                                <a class="button-circle" href="<?php the_field('contact_link', 'options') ?>" target="_blank">Contact Us</a>
+                                <a class="button-circle" href="<?php the_field('contact_link', 'options') ?>">Contact Us</a>
                             </button>
                         </div>
                     </div>
