@@ -989,7 +989,7 @@
     &.scrolled {
         padding: 0 0 0 3%;
         height: @header-height-scrolled;
-        box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 4px 10px -2px rgba(0, 0, 0, 0.1);
 
         .custom-header-right-wrap {
             height: @header-height-scrolled;
@@ -2441,7 +2441,7 @@ html.html-wrapper {
             }
 
             .button {
-                margin: auto;
+                margin-left: 20px;
 
                 &.circle-left {
                     color: @white;
@@ -2522,7 +2522,7 @@ html.html-wrapper {
             padding: 8px 0;
             display: flex;
             transition: all .2s ease-in-out;
-            justify-content: center;
+            justify-content: flex-start;
 
             // &::after {
             //     content: '';
@@ -2538,7 +2538,6 @@ html.html-wrapper {
                 display: block;
                 cursor: pointer;
                 width: 100%;
-                max-width: 260px;
                 margin: auto;
 
                 a {
@@ -2548,7 +2547,7 @@ html.html-wrapper {
                         content: '';
                         position: absolute;
                         top: 11px;
-                        right: 0;
+                        right: 20px;
                         width: 26px;
                         height: 26px;
                         background-image: url('assets/images/menu-arrow-white.png');
@@ -2646,6 +2645,7 @@ html.html-wrapper {
                 opacity: 0;
                 transition: all .3s ease-in-out;
                 pointer-events: none;
+                margin: 0 20px;
 
                 li {
                     &::before {
@@ -2672,7 +2672,7 @@ html.html-wrapper {
                 &.show {
                     max-height: 1300px;
                     opacity: 1;
-                    margin: 20px 0;
+                    margin: 20px;
 
                     a {
                         pointer-events: all !important;
