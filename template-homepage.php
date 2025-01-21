@@ -67,11 +67,11 @@ $cars_arr = getAllGcCarModels($lang, $db_id);
                         <div class="fields-column-wrapper">
                             <div class="single-field date-field">
                                 <label for="your-check-in">Check-in</label>
-                                <input type="text" id="your-check-in" name="your-check-in" value="<?php echo $_GET['your-check-in']; ?>" placeholder="Select Date" required>
+                                <input type="text" id="your-check-in" name="your-check-in" value="<?php echo isset($_GET['your-check-in']) ? htmlspecialchars($_GET['your-check-in']) : ''; ?>" placeholder="Select Date" required>
                             </div>
                             <div class="single-field date-field">
                                 <label for="your-check-out">Check-Out</label>
-                                <input type="text" id="your-check-out" name="your-check-out" value="<?php echo $_GET['your-check-out']; ?>" placeholder="Select Date" required>
+                                <input type="text" id="your-check-out" name="your-check-out" value="<?php echo isset($_GET['your-check-out']) ? htmlspecialchars($_GET['your-check-out']) : ''; ?>" placeholder="Select Date" required>
                             </div>
                             <div class="single-field dropdown">
                                 <label for="adults">Adults</label>
@@ -164,7 +164,7 @@ $cars_arr = getAllGcCarModels($lang, $db_id);
     <section class="more-posts-section bg-color paddings">
         <div class="container center">
             <h3 class="title large main-color show-on-scroll slide-up" style=" transition-delay: 0.01s;"><?php _e('Our Bungalows'); ?></h3>
-            <p class=" text main-color show-on-scroll slide-up" style=" transition-delay: 0.06s;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum.</p>
+            <p class=" text main-color show-on-scroll slide-up" style=" transition-delay: 0.06s;"><?php the_field('facilities_text'); ?></p>
         </div>
         <div class="container full flex show-on-scroll slide-up" style=" transition-delay: 0.07s;">
             <?php $i = 1; ?>
