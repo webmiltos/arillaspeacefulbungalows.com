@@ -9,7 +9,6 @@
             <div class="content-left">
                 <div class="content-left-wrap">
 
-
                     <div class="grid-wrapper titles">
                         <div class="cell">
                             <h1 class="title medium bold show-on-scroll slide-up" style="transition-delay: 0.2s;"><?php the_title(); ?></h1>
@@ -33,7 +32,6 @@
                                     <div class="row show-on-scroll slide-up" style="transition-delay: 0.26s;">
                                         <div class="cell">
                                             <h4 class="title"><?php the_sub_field('title'); ?></h4>
-
                                             <?php if (get_sub_field('text')) : ?>
                                                 <p><?php the_sub_field('text'); ?></p>
                                             <?php endif; ?>

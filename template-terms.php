@@ -53,7 +53,6 @@
         </div>
     </section>
 
-
     <h3 class="no-font">Terms</h3>
 </main>
 

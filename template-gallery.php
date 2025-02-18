@@ -49,13 +49,10 @@
                 <?php endwhile; ?>
             </div>
         <?php endif; ?>
-
     </section>
 
 
-
-
-    <h3 class="no-font">Terms</h3>
+    <h3 class="no-font">Gallery</h3>
 </main>
 
 <?php get_footer(); ?>

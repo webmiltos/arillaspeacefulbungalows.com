@@ -81,7 +81,6 @@
         </div>
     </section>
 
-
     <section class="our-hall-section container flex">
         <div class="content-left gsap-item2">
             <div class="content-left-wrap">
@@ -93,7 +92,7 @@
                 <?php endif; ?>
                 <h3 class="title medium uppercase main-color"><?php the_field('hall_title'); ?></h3>
                 <p class="text medium main-color"><?php the_field('hall_text'); ?></p>
-                <a class="text-button text uppercase main-color" href="<?php the_field('hall_link', 'options'); ?>">Learn More</a>
+                <a class="text-button text uppercase main-color" href="<?php the_field('hall_link', 'options'); ?>"><?php _e('Learn More', 'gocreations'); ?></a>
             </div>
         </div>
         <div class="content-right">
@@ -104,13 +103,11 @@
         </div>
     </section>
 
-
     <section class="area-section container">
         <div class="content-top show-on-scroll slide-left" style=" transition-delay: 0.1s;">
             <h3 class="title extra-large white"><?php the_field('area_title'); ?></h3>
             <p class="text margin-bottom white"><?php the_field('area_text'); ?></p>
         </div>
-
         <div class="content-bottom">
             <div class="area-repeater">
                 <?php if (get_field('area_repeater')) : ?>

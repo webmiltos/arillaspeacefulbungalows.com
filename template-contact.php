@@ -29,7 +29,6 @@
             </div>
     </section>
 
-
     <section class="map-section show-on-scroll slide-up" style="transition-delay: 0.2s;">
         <div class="container flex reverse">
             <div class="content-left grid floating-labels-form">
@@ -56,7 +55,7 @@
                     </a>
                 </div>
 
-                <button class="button-circle white flex center"> <a href=""> Find Us on Map</a></button>
+                <button class="button-circle white flex center"> <a href=""><?php _e('Find Us on Map', 'gocreations'); ?></a></button>
             </div>
         </div>
     </section>

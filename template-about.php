@@ -9,7 +9,7 @@
     if (!empty($image)) : ?>
         <section class="intro-section" style="background-image: url(<?php echo $image['url']; ?>); background-size: cover;  background-repeat: no-repeat; filter: brightness(.9); background-position: 35% 75%;">
             <div class="container show-on-scroll slide-left">
-                <span class="pretitle">About Us</span>
+                <span class="pretitle"><?php _e('About Us', 'gocreations'); ?></span>
                 <h1 class="title white extra-large bold"><?php the_field('intro_title'); ?></h1>
                 <p class="content white"><?php the_field('intro_text'); ?></p>
             </div>
@@ -22,7 +22,7 @@
             <h2 class="title large bold white margin-bottom"><?php the_field('why_title', 8); ?></h2>
             <p class="text margin-bottom white "><?php the_field('why_text', 8); ?></p>
             <a href="<?php the_field('about_link', 'options') ?>" class="button border">
-                About Us
+                <?php _e('About Us', 'gocreations'); ?>
                 <!-- <i class="gg-arrow-right-o"></i> -->
                 <!-- <span class="icon-yellow-arrow"></span> -->
                 <span class="white-arrow"></span>

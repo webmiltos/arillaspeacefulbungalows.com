@@ -15,7 +15,6 @@
         </section>
     <?php endif; ?>
 
-
     <section class="after-intro-section paddings">
         <div class="container flex">
             <div class="content-left show-on-scroll slide-right" style="transition-delay: 0.2s;">
@@ -77,12 +76,10 @@
                         <?php endwhile; ?>
                     <?php endif; ?>
                 </div>
-                <a class="button-circle hover-green center" href="<?php the_field('contact_link', 'options'); ?>">Contact Us</a>
+                <a class="button-circle hover-green center" href="<?php the_field('contact_link', 'options'); ?>"><?php _e('Contact Us', 'gocreations'); ?></a>
             </div>
         </div>
     </section>
-
-
 
 </main>
 

@@ -26,7 +26,7 @@
                                 <?php endif; ?>
                             </div>
                             <button>
-                                <a class="button-circle" href="<?php the_field('contact_link', 'options') ?>">Contact Us</a>
+                                <a class="button-circle" href="<?php the_field('contact_link', 'options') ?>"><?php _e('Contact Us', 'gocreations'); ?></a>
                             </button>
                         </div>
                     </div>
@@ -344,7 +344,7 @@
                                             ?>
             &copy; <?php echo get_bloginfo('name'); ?> <?php echo date("Y"); ?></span>
         <span class="footer-menu-copyright"><?php wp_nav_menu(array('theme_location' => 'footer-menu-copyright')); ?></span>
-        <span class="footer-copyright-right"><?php echo __(' Designed & Developed by', 'gocreations'); ?> <a href="https://gocreations.gr" target="_blank">go creations</a></span>
+        <span class="footer-copyright-right"><?php echo __('Designed & Developed by', 'gocreations'); ?> <a href="https://gocreations.gr" target="_blank">go creations</a></span>
         <!-- <span class="footer-copyright-right"> <?php echo __('Online Booking Engine by', 'gocreations'); ?> <a href="https://gocars.online/" target="_blank">go cars online</a> | <?php echo __(' Designed & Developed by', 'gocreations'); ?> <a href="https://gocreations.gr" target="_blank">go creations</a></span> -->
 
         <!-- <span class="footer-signature">ΜΗ.Τ.Ε: 0829Ε81000096101</a></span> -->

@@ -8,7 +8,7 @@
     if (!empty($image)) : ?>
         <section class="intro-section" style="background-image: url(<?php echo $image['url']; ?>); background-size: cover;  background-repeat: no-repeat; filter: brightness(.9); background-position: 35% 75%;">
             <div class="container show-on-scroll slide-left">
-                <span class="pretitle">About Us</span>
+                <span class="pretitle"><?php _e('About Us', 'gocreations'); ?></span>
                 <h1 class="title white extra-large bold"><?php the_field('intro_title'); ?></h1>
                 <p class="content white"><?php the_field('intro_text'); ?></p>
             </div>

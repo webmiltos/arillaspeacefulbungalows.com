@@ -17,8 +17,8 @@
                             <?php endforeach; ?>
                         <?php endif; ?>
                     </div>
-                    <div class="swiper-button-prev">PREVIOUS</div>
-                    <div class="swiper-button-next">NEXT</div>
+                    <div class="swiper-button-prev"><?php _e('PREVIOUS', 'gocreations'); ?></div>
+                    <div class="swiper-button-next"><?php _e('NEXT', 'gocreations'); ?></div>
                 </div>
             </div>
         </div>
@@ -28,7 +28,7 @@
                 <p class="text white"><?php the_field('intro_text', false, false); ?></p>
                 <a href="#gallery" class="button border border-white circle-left flex center">
                     <span class="circle-left"></span>
-                    View Gallery
+                    <?php _e(' View Gallery', 'gocreations'); ?>
                 </a>
             </div>
         </div>
@@ -139,7 +139,7 @@
                     <div class="gallery-wrapper">
                         <div class="title large white center margin-bottom">Gallery</div>
                         <p class="text white"><?php the_field('gallery_text'); ?></p>
-                        <button class="button-circle flex center" data-fancybox-trigger="gallery">View Gallery</button>
+                        <button class="button-circle flex center" data-fancybox-trigger="gallery"><?php _e('View Gallery', 'gocreations'); ?></button>
 
                         <!-- Hidden Fancybox Gallery -->
                         <div style="display: none;">
@@ -196,7 +196,7 @@
             ?>
         </div>
 
-        <a class="button-circle flex center" href="<?php the_field('bungalows_link', 'options'); ?>" target="_blank">View All</a>
+        <a class="button-circle flex center" href="<?php the_field('bungalows_link', 'options'); ?>" target="_blank"><?php _e('View All', 'gocreations'); ?></a>
     </section>
 
 

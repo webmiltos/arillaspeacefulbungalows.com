@@ -16,7 +16,7 @@
         </section>
     <?php endif; ?>
 
-    <h3 class="no-font">Our Blog</h3>
+    <h3 class="no-font"><?php _e('Our Blog', 'gocreations'); ?></h3>
 
 
     <section class="blog-post-archive">
@@ -44,7 +44,7 @@
                                 <?php endif; ?>
 
                                 <a href="<?php the_permalink(); ?>" class="button white">
-                                    Learn More
+                                    <?php _e('Learn More', 'gocreations'); ?>
                                     <span class="icon-yellow-arrow blue"></span>
                                 </a>
                             </div>
@@ -65,10 +65,6 @@
             ?>
     </section>
 
-
-
-
 </main>
-
 
 <?php get_footer(); ?>

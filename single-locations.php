@@ -2,7 +2,6 @@
 
 <main class="site-content single-locations-page">
 
-
     <?php
     $image = get_field('intro_image');
     if (!empty($image)) : ?>
@@ -14,7 +13,6 @@
         </section>
     <?php endif; ?>
 
-
     <section class="post-content-section container show-on-scroll slide-up" style="transition-delay: 0.6s;">
         <div class="content-left">
             <div id="h1-section" class="hide"></div>
@@ -24,10 +22,9 @@
         <div class="content-right sidebar">
             <div class="sidebar-box">
                 <?php if (get_field('highlights_repeater')) : ?>
-                    <p class="title">Highlights</p>
+                    <p class="title"><?php _e('Highlights', 'gocreations'); ?></p>
                     <?php while (the_repeater_field('highlights_repeater')) : ?>
                         <ul class="repeater-item">
-
                             <li class="text"> <?php the_sub_field('text'); ?></li>
                         </ul>
                     <?php endwhile; ?>
@@ -35,7 +32,7 @@
             </div>
 
             <div class="sidebar-box">
-                <p class="title">Related Locations</p>
+                <p class="title"><?php _e('Related Locations', 'gocreations'); ?></p>
 
                 <div class="location-wrapper">
                     <?php /*
@@ -103,9 +100,7 @@
                                 </div>
                             <?php endif; ?>
                         <?php endwhile; ?>
-
                     <?php endif; ?>
-
                 </div>
             </div>
         </div>

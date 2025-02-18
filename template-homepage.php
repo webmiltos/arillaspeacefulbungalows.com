@@ -66,15 +66,15 @@ $cars_arr = getAllGcCarModels($lang, $db_id);
                     <div class="fields-wrapper">
                         <div class="fields-column-wrapper">
                             <div class="single-field date-field">
-                                <label for="your-check-in">Check-in</label>
+                                <label for="your-check-in"><?php _e('Check-in', 'gocreations'); ?></label>
                                 <input type="text" id="your-check-in" name="your-check-in" value="<?php echo isset($_GET['your-check-in']) ? htmlspecialchars($_GET['your-check-in']) : ''; ?>" placeholder="Select Date" required>
                             </div>
                             <div class="single-field date-field">
-                                <label for="your-check-out">Check-Out</label>
+                                <label for="your-check-out"><?php _e('Check-Out', 'gocreations'); ?></label>
                                 <input type="text" id="your-check-out" name="your-check-out" value="<?php echo isset($_GET['your-check-out']) ? htmlspecialchars($_GET['your-check-out']) : ''; ?>" placeholder="Select Date" required>
                             </div>
                             <div class="single-field dropdown">
-                                <label for="adults">Adults</label>
+                                <label for="adults"><?php _e('Adults', 'gocreations'); ?></label>
                                 <select id="adults" name="adults" class="form-control" required>
                                     <option disabled selected value="">Select</option>
                                     <option value="1">1</option>
@@ -88,9 +88,9 @@ $cars_arr = getAllGcCarModels($lang, $db_id);
                                 </select>
                             </div>
                             <div class="single-field dropdown">
-                                <label for="children">Kids</label>
+                                <label for="children"><?php _e('Kids', 'gocreations'); ?></label>
                                 <select id="children" name="children" class="form-control">
-                                    <option disabled selected value="">Select</option>
+                                    <option disabled selected value=""><?php _e('Select', 'gocreations'); ?></option>
                                     <option value="0">0</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -101,7 +101,7 @@ $cars_arr = getAllGcCarModels($lang, $db_id);
                         </div>
                         <div class="submit-wrap">
                             <button type="submit" id="submit">
-                                <a class="submit-button" href="#">Check Availability</a>
+                                <a class="submit-button" href="#"><?php _e('Check Availability', 'gocreations'); ?></a>
                             </button>
                         </div>
                     </div>
@@ -202,7 +202,7 @@ $cars_arr = getAllGcCarModels($lang, $db_id);
             }
             ?>
         </div>
-        <a class="button-circle flex center show-on-scroll slide-up" style=" transition-delay: 0.01s;" href="<?php the_field('bungalows_link', 'options'); ?>">View All</a>
+        <a class="button-circle flex center show-on-scroll slide-up" style=" transition-delay: 0.01s;" href="<?php the_field('bungalows_link', 'options'); ?>"><?php _e('View All', 'gocreations'); ?></a>
     </section>
 
     <?php
@@ -239,7 +239,7 @@ $cars_arr = getAllGcCarModels($lang, $db_id);
                         <?php endwhile; ?>
                     <?php endif; ?>
                 </div>
-                <a class="button-circle white  flex center" href="<?php the_field('facilities_link', 'options'); ?>">View All</a>
+                <a class="button-circle white  flex center" href="<?php the_field('facilities_link', 'options'); ?>"><?php _e('View All', 'gocreations'); ?></a>
             </div>
         </section>
     <?php endif; ?>
@@ -252,7 +252,7 @@ $cars_arr = getAllGcCarModels($lang, $db_id);
                 <p class="text main-color show-on-scroll slide-up" style=" transition-delay: 0.09s;">
                     <?php the_field('gallery_text'); ?>
                 </p>
-                <a class="button-circle hover-green" href="<?php the_field('gallery_link', 'options'); ?>">View All</a>
+                <a class="button-circle hover-green" href="<?php the_field('gallery_link', 'options'); ?>"><?php _e('View All', 'gocreations'); ?></a>
             </div>
             <div class="content-right gsap-item2 show-on-scroll slide-up" style="transition-delay: 0.1s;">
                 <div class="footer-image-wrap">
