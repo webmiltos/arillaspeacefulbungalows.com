@@ -139,21 +139,24 @@ $cars_arr = getAllGcCarModels($lang, $db_id);
 
 
     <section class="our-hall-section container flex">
+        <?php
+        $page_id = (ICL_LANGUAGE_CODE == 'de') ? 707 : 352;
+        ?>
         <div class="content-left gsap-item2">
             <div class="content-left-wrap show-on-scroll slide-up" style=" transition-delay: 0.01s;">
                 <?php
-                $image = get_field('hall_image_left', 352);
+                $image = get_field('hall_image_left', $page_id);
                 $size = 'large';
                 if ($image) : ?>
                     <?php echo wp_get_attachment_image($image['id'], $size); ?>
                 <?php endif; ?>
-                <p class="title medium uppercase main-color show-on-scroll slide-up" style=" transition-delay: 0.03s;"><?php the_field('hall_title', 352); ?></p>
-                <p class="text medium main-color show-on-scroll slide-up" style=" transition-delay: 0.06s;"><?php the_field('hall_text', 352); ?></p>
+                <p class="title medium uppercase main-color show-on-scroll slide-up" style=" transition-delay: 0.03s;"><?php the_field('hall_title', $page_id); ?></p>
+                <p class="text medium main-color show-on-scroll slide-up" style=" transition-delay: 0.06s;"><?php the_field('hall_text', $page_id); ?></p>
                 <a class="text-button text uppercase main-color show-on-scroll slide-up" style=" transition-delay: 0.09s;" href="<?php the_field('hall_link', 'options'); ?>">Learn More</a>
             </div>
         </div>
         <div class="content-right show-on-scroll slide-up" style=" transition-delay: 0.01s;">
-            <?php $image = get_field('hall_image_right', 352);
+            <?php $image = get_field('hall_image_right', $page_id);
             if (!empty($image)) : ?>
                 <img src="<?php echo $image['sizes']['very_large']; ?>" alt="<?php echo $image['alt']; ?>" />
             <?php endif; ?>
